@@ -1,0 +1,59 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f7fb;
+}
+
+/* Layout body below navbar */
+.layout-body {
+  display: flex;
+  flex: 1;
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar is fixed */
+.sidebar {
+  width: 230px;
+  background-color: #32475b;
+  color: white;
+  flex-shrink: 0;
+  padding-top: 20px;
+  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 500;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-left: 230px;
+  padding: 30px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* When sidebar is hidden */
+.main-content.expanded {
+  margin-left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

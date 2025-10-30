@@ -1,0 +1,72 @@
+.page {
+  padding: 40px 20px; /* Increased top padding for more space below navbar */
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  margin-left: 230px;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.page h2 {
+  margin-bottom: 30px; /* more gap between heading and cards */
+  color: #2c3e50;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Card container layout */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 10px; /* subtle push for spacing below heading */
+}
+
+/* Base card style */
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Status-based color coding */
+.card:nth-child(1) {
+  border-left: 6px solid #1abc9c; /* New */
+}
+
+.card:nth-child(2) {
+  border-left: 6px solid #f39c12; /* In Progress */
+}
+
+.card:nth-child(3) {
+  border-left: 6px solid #2ecc71; /* Won */
+}
+
+.card:nth-child(4) {
+  border-left: 6px solid #e74c3c; /* Lost */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .page {
+    margin-left: 0;
+    padding: 25px 15px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
